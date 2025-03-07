@@ -2,7 +2,13 @@ on:
   workflow_call:
 
 jobs:
-  called:
+  called-fail:
     runs-on: ubuntu-latest
     steps:
       - run: exit 1
+
+  called-pass:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'done'
+      
