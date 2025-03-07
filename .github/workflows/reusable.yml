@@ -5,4 +5,4 @@ jobs:
   called:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'done'
+      - run: exit 1
