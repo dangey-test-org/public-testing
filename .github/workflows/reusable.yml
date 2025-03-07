@@ -4,6 +4,7 @@ on:
 jobs:
   called-matrix:
     strategy:
+      fail-fast: false
       matrix:
         num: [0,1,2]
     runs-on: ubuntu-latest
