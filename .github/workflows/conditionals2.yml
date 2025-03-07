@@ -2,7 +2,12 @@ on:
   workflow_dispatch:
 
 jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
   pre:
+    needs: first
     runs-on: ubuntu-latest
     steps:
       - run: exit 1
