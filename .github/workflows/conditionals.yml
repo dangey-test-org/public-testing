@@ -5,15 +5,11 @@ jobs:
   first:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'done'
+      - run: exit 1
       
-  pre:
+  second:
     needs: first
-    uses: ./.github/workflows/reusable.yml
-
-  task:
-    if: ${{ success() || failure() || cancelled() }}
-    needs: pre
+    if: failure()
     runs-on: ubuntu-latest
     steps:
       - run: echo 'done'
