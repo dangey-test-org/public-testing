@@ -13,7 +13,7 @@ jobs:
 
   task:
     if: ${{ success() || failure() || cancelled() }}
-    needs: [first,pre]
+    needs: pre
     runs-on: ubuntu-latest
     steps:
       - run: echo 'done'
