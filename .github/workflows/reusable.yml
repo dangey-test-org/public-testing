@@ -11,4 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo 'done'
+
+  called-matrix:
+    strategy:
+      matrix:
+        num: [0,1,2]
+    runs-on: ubuntu-latest
+    steps:
+      - if: matrix.num == 1
+        run: exit 1
+      - run: echo 'done'
       
