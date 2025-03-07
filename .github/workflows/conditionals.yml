@@ -3,9 +3,7 @@ on:
 
 jobs:
   pre:
-    runs-on: ubuntu-latest
-    steps:
-      - run: exit 1
+    uses: ./.github/workflows/reusable.yml
 
   task:
     if: ${{ success() || failure() || cancelled() }}
