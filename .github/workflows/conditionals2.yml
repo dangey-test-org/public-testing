@@ -5,7 +5,7 @@ jobs:
   pre:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'done'
+      - run: exit 1
 
   task:
     needs: pre
