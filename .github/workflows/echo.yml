@@ -5,4 +5,4 @@ jobs:
   job-name:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'done'
+      - run: echo $RUNNER_NAME
