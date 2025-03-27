@@ -1,12 +1,15 @@
 on:
   workflow_call:
+    inputs:
+      workflow-context:
+        type: string
 
 jobs:
   called-matrix:
     strategy:
       fail-fast: false
       matrix:
-        num: [0,1,2]
+        num: [0]
     runs-on: ubuntu-latest
     steps:
       - if: matrix.num == 1
