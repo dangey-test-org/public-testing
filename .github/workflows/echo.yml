@@ -5,4 +5,4 @@ jobs:
   job-name:
     uses: ./.github/workflows/reusable.yml
     with:
-      workflow-context: windows_building, ${{ toJSON((matrix || '')) }}
+      workflow-context: windows_building, ${{ toJSON((matrix || ' ')) }}
