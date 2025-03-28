@@ -3,13 +3,14 @@ on:
 
 jobs:
   first:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - run: exit 1
       
   second:
     needs: first
-    if: failure()
+    if: false
     runs-on: ubuntu-latest
     steps:
       - run: echo 'done'
