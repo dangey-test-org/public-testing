@@ -3,6 +3,6 @@ on:
 
 jobs:
   job-name:
-    uses: ./.github/workflows/reusable.yml
-    with:
-      workflow-context: windows_building, ${{ toJSON(matrix) || '' }}
+    runs-on: ubuntu-latest
+    steps:
+     - run: echo "${{ toJSON(matrix) }}"
