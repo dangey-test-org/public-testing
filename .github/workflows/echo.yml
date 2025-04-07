@@ -3,6 +3,6 @@ on:
 
 jobs:
   job-name:
-    uses: ./.github/workflows/reusable.yml
+    uses: dangey-test-org/public-testing/.github/workflows/reusable.yml@main
     with:
-      workflow-context: ${{ toJSON(matrix) }}
+      input1: ${{ toJSON(matrix) }}
