@@ -5,4 +5,6 @@ jobs:
   job-name:
     runs-on: ubuntu-latest
     steps:
-     - run: echo "${{ toJSON(matrix) }}"
+     - run: echo "$VAR"
+       env:
+         VAR: ${{ toJSON(matrix) }}
