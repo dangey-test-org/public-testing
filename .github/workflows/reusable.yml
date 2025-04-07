@@ -1,18 +1,12 @@
 on:
   workflow_call:
     inputs:
-      workflow-context:
+      input1:
         type: string
 
 jobs:
-  called-matrix:
-    strategy:
-      fail-fast: false
-      matrix:
-        num: [0]
+  called:
     runs-on: ubuntu-latest
     steps:
-      - if: matrix.num == 1
-        run: exit 1
       - run: echo 'done'
       
