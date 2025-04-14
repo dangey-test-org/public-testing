@@ -11,6 +11,6 @@ jobs:
         num: [0,1,2,3,4]
     steps:
       - run: |
-          if [${{ matrix.num }} -eq 2]; then
+          if (( ${{ matrix.num }} == 2 )); then
             exit 1
           fi
