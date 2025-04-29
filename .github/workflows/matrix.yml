@@ -2,12 +2,26 @@ on:
   workflow_dispatch:
 
 jobs:
-  job-name:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ ubuntu-latest, windows-latest, macos-latest, no-runner]
-        ids: [0,1,2,3,4]
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - run: sleep 30
-        shell: bash
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Compute matrix
+        id: set-matrix
+        run: |
+          VAL=$(cat test.json | tr -d '\n')
+          echo "matrix=$VAL" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs:
+      - setup
+    strategy:
+      matrix: ${{ fromJson(needs.setup.outputs.matrix) }}
+      fail-fast: false
+    name: ${{ matrix.plan.mode.platformIndependent == true && matrix.plan.mode.name || format('{0} / {1}', matrix.plan.platform.name, matrix.plan.mode.name) }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'done'
