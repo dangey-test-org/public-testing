@@ -6,7 +6,7 @@ on:
 
 jobs:
   called:
-    name: Called workflow / Called job
+    name: Called Workflow / Called Job
     runs-on: ubuntu-latest
     steps:
       - run: echo 'done'
