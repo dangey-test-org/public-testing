@@ -1,8 +1,5 @@
 on:
   workflow_call:
-    inputs:
-      input1:
-        type: string
 
 jobs:
   called:
