@@ -4,5 +4,11 @@ on:
 jobs:
   caller:
     name: Caller Workflow / Caller Job
-    uses: ./.github/workflows/reusable.yml 
+    uses: ./.github/workflows/reusable.yml
+
+  non-reusable:
+    name: First / Second / Third
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'done'
       
