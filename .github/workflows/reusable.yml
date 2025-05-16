@@ -3,7 +3,7 @@ on:
 
 jobs:
   called:
-    name: Called Workflow / Called Job
+    name: "Called Workflow / Called Job"
     runs-on: ubuntu-latest
     steps:
       - run: echo 'done'
