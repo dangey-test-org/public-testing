@@ -1,13 +1,7 @@
 on:
   workflow_dispatch:
-    inputs:
-      input1:
-        type: string
-        default: ${{ toJSON('') }}
 
 jobs:
-  called:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo 'done'
+  caller:
+    uses: ./.github/workflows/reusable.yml 
       
