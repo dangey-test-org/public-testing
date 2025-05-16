@@ -3,7 +3,7 @@ on:
 
 jobs:
   caller:
-    name: Caller Workflow / Caller Job
+    name: "Caller Workflow / Caller Job"
     uses: ./.github/workflows/reusable.yml
 
   non-reusable:
